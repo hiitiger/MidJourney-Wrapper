@@ -1,0 +1,1 @@
+python bot.py > logout.log 2>&1 &
