@@ -1,12 +1,11 @@
-#strings
+import os
+from dotenv import load_dotenv
 
-DAVINCI_TOKEN = [Token of Discord bot]
-
-SERVER_ID = [Server id here]
-
-SALAI_TOKEN = [Token of the Account from which you paid MidJourney ]
-
-CHANNEL_ID = [Channel in which commands are sent]
+load_dotenv()
+DAVINCI_TOKEN = os.getenv('DAVINCI_TOKEN')
+SALAI_TOKEN = os.getenv('SALAI_TOKEN')
+SERVER_ID = os.getenv('SERVER_ID')
+CHANNEL_ID = os.getenv('CHANNEL_ID')
 
 #boolean
 USE_MESSAGED_CHANNEL = False
