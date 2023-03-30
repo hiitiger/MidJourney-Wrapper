@@ -1,4 +1,13 @@
 import discord
+import os
+import logging
+import logging.config
+cwd = os.path.dirname(__file__)
+log_config=f"{cwd}/log.ini"
+logging.config.fileConfig(log_config, disable_existing_loggers=False)
+
+logger = logging.getLogger(__name__)
+
 import Globals
 from Salai import PassPromptToSelfBot, Upscale, MaxUpscale, Variation
 
@@ -7,7 +16,7 @@ bot = discord.Bot()
 
 @bot.event
 async def on_ready():
-    print(f"Logged in as {bot.user}")
+    logger.info(f"Logged in as {bot.user}")
 
 
 @bot.command(description="Make DaVinci say something")
@@ -124,4 +133,5 @@ async def on_message(message):
         await message.delete()
 
 
+logger.info("bot.run")
 bot.run(Globals.DAVINCI_TOKEN)

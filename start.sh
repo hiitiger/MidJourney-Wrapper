@@ -1,1 +1,1 @@
-python bot.py > logout.log 2>&1 &
+python bot.py > /dev/null 2>&1 &
